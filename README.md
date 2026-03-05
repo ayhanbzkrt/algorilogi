@@ -74,3 +74,78 @@ Sıfırlamak için tarayıcı depolamasını temizleyebilirsiniz:
 
 ## Kredi / İmza
 **AI'Han Academy — Algori & Logi**
+
+# Algori & Logi — Python Learning Portal (Pyodide + 3D Crystals)
+
+A kid-friendly, gamified **Python learning portal** built as a **single-file (single HTML)** project.  
+Flow: Lessons → Practice → Quiz → Collect **6 crystal stones** → **Certificate**.  
+Python runs in the browser using **Pyodide (real Python)**; if Pyodide fails to load, a **Mini-Python fallback** is used.
+
+---
+
+## Features
+- ✅ 6-lesson progression system (locked lesson flow)
+- ✅ Run real Python in the browser with Pyodide
+- ✅ 3D crystal/stone system (Three.js)
+- ✅ Quizzes to complete lessons and earn stones
+- ✅ Certificate page + name input
+- ✅ Progress saved with `localStorage`
+
+---
+
+## Setup (GitHub Pages)
+1. Add the full HTML as **`index.html`** in your repo (paste the entire file).
+2. GitHub → **Settings → Pages**
+3. Source: **Deploy from a branch**
+4. Branch: **main** / folder: **/(root)**
+5. Save → Your site will be live shortly.
+
+> Tip: Using the filename `index.html` avoids routing issues on Pages.
+
+---
+
+## Run Locally
+Since the project uses CDNs, it may work by opening the file directly, but some browsers apply restrictions.  
+Recommended:
+- VS Code → **Live Server** extension  
+or
+- Any simple HTTP server.
+
+---
+
+## Dependencies (CDN)
+Already included inside the HTML:
+- **Pyodide v0.25.1**
+- **Three.js r128**
+- Google Fonts + Font Awesome
+
+---
+
+## Saved Data (LocalStorage Keys)
+The portal stores progress and name using:
+- `algori_logi_progress_v8` (completed lessons)
+- `algori_logi_student_name_v8` (student name)
+- `algori_logi_crystals_v8` (collected stones)
+
+To reset:
+- DevTools → Application → Local Storage → your domain → delete these keys
+
+---
+
+## Known Notes
+- `input()` is **intentionally disabled** (kid-safe flow + predictable UX).  
+  If user code calls `input()`, Pyodide throws a “not supported in this portal” error.
+- Certificate “Download PNG/PDF” buttons are currently a **demo flow** and do **not** generate real files.  
+  (If you want real PNG/PDF export, it can be added using `html2canvas` + `jsPDF` while keeping it single-file friendly.)
+
+---
+
+## License
+Choose what you prefer:
+- MIT (recommended for open source)
+- or “All Rights Reserved”
+
+---
+
+## Credit
+**AI'Han Academy — Algori & Logi**
